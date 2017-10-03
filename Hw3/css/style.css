@@ -1,0 +1,28 @@
+.h2Center {
+  text-align: center;
+}
+
+.content {
+  display: table;
+  width: 100%;
+}
+
+.contentCenter {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.partAccordion {
+  width: 50%;
+  margin: 0 auto;
+}
+
+h2, ul {
+  padding: 10px;
+}
+
+.formContent {
+  width: 30%;
+  margin: 0 auto;
+}

@@ -1,0 +1,28 @@
+.sample-link {
+  margin: 0 auto;
+  max-width: 125px;
+}
+
+#sample-container {
+  display: block;
+  max-width: 500px;
+  margin: 0px auto;
+  border: thin solid #aaa;
+  border-radius: 5px;
+}
+
+#sample-container p {
+  padding: s10px;
+  margin: 0px;
+}
+
+#sample-container a {
+  color: #04395E;
+  text-decoration: none;
+}
+
+#back {
+  text-align: center;
+  display: table;
+  margin: 0 auto;
+}

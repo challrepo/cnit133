@@ -1,0 +1,106 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+
+}
+
+nav p a, .inactive {
+  display: inline-block;
+  color: #04395E;
+  background-color: #DAB785;
+  padding: 20px;
+  margin: 2.5px auto;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.inactive {
+  background-color: white;
+}
+
+.inactive:hover {
+  background-color: white;
+}
+
+nav p a:hover {
+  background-color: #D5896F;
+  text-decoration: underline;
+}
+
+
+.page-title, nav p {
+  text-align: center;
+}
+
+.page-title {
+  font-family: 'Montserrat', sans-serif;
+  color: #04395E;
+}
+
+.menu {
+  max-width: 500px;
+  background-color: #70A288;
+  color: #04395E;
+  border-radius: 5px;
+  display: block;
+  margin: 30px auto;
+  padding: 20px;
+
+}
+
+.menu a {
+  color: #04395E;
+
+}
+
+#last-modified {
+  text-align: center;
+  color: #04395E;
+}
+
+.last-modified-container {
+  margin-top: 30px;
+}
+
+.caption {
+  text-align: center;
+  color: #04395E;
+}
+
+#validated {
+  text-align: center;
+}
+
+form, .result, #back {
+  display: block;
+  margin: 0 auto;
+}
+
+form {
+  width: 400px;
+}
+
+#back, .result {
+  text-align: center;
+}
+
+.table1, #table2 {
+  display: table;
+  margin: 0 auto;
+}
+
+#cnt1_10 {
+  display: table;
+  margin: 0 auto;
+}
+
+.result {
+  background-color: #fff;
+  color: red;
+  opacity: 0.0;
+  display: table;
+  width: 300px;
+  margin: 0 auto;
+
+}

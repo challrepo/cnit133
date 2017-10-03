@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <title>HW2 | CNIT 133</title>
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="css/hw2.css">
+ <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:900" rel="stylesheet">
+</head>
+<body>
+	<h1 class="page-title">CNIT 133 Homework</h1>
+
+<nav>
+  <p>
+    <a href="index.html">HW 1</a>
+    <span class="inactive">HW 2</span>
+    <a href="HW3.html">H2 3</a>
+    <a href="HW4.html">HW 4</a>
+    <a href="HW5.html">HW 5</a>
+    <a href="HW6.html">HW 6</a>
+    <a href="HW7.html">HW 7</a>
+    <a href="HW8.html">HW 8</a>
+  </p>
+</nav>
+
+<h2 class="caption">Homework #2 - Part II <br> Input integers on a form</h2>
+
+
+<br>
+
+<form class="" action="index.html" method="post">
+  <label for="int1">Integer 1</label>
+  <input type="text" name="int1" value="0" id="int1">
+  <br/>
+  <label for="int2">Integer 2</label>
+  <input type="text" name="int2" value="0" id="int2">
+  <br/>
+  <label for="int3">Integer 3</label>
+  <input type="text" name="int3" value="0" id="int3">
+  <br>
+  <button type="button" name="button" id="btn1"><label for="btn1">Compute</label></button>
+
+</form>
+
+<br>
+<a href="javascript: history.go(-1);" id='back'>Go Back</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#btn1').on('click', function() {
+    //  alert('click');
+      var sum = average = 0;
+      var product, min, max;
+
+      length = $('input[type=text]').length;
+      $('input[type=text]').each(function(index)  {
+        var value = parseInt($(this).val());
+
+        if(isNaN(value)) {
+          value = 0;
+        }
+
+        // calculate sum
+        sum += value;
+
+        // calculate product
+        if(isNaN(product) || product == undefined)
+          product = value;
+        else
+          product *= value;
+
+        // check min
+        if(isNaN(min))
+          min = value;
+        else if(value < min)
+          min = value;
+
+        // check max
+        if(isNaN(max))
+          max = value;
+        else if(value > max)
+          max = value;
+
+      });
+
+      // compute average
+      average = sum / $('input[type=text]').length;
+
+      var out = "sum: " + sum;
+      out += "\n";
+      out += "Average: " + average + "\n";
+      out += "Product: " + product + "\n";
+      out += "    Min: " + min + "\n";
+      out += "    Max: " + max + "\n";
+
+      alert(out);
+    });
+  });
+</script>
+
+<div class="last-modified-container">
+  <p id="last-modified">Document last modified: </p>
+  <script type="text/javascript">
+    lastModifiedP = document.getElementById('last-modified');
+    lastModifiedP.innerHTML += " " + document.lastModified;
+  </script>
+</div>
+
+</body>
+</html>

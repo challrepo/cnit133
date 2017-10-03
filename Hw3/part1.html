@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">CNIT133 Homework 3 - Functions</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <!--
+          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#">Part 1</a>
+          <a class="nav-item nav-link" href="#">Part 2</a>
+          <a class="nav-item nav-link" href="#">Part 3</a>
+          <a class="nav-item nav-link" href="#">Part 4</a>
+          <a class="nav-item nav-link" href="#">Part 5</a>
+          <a class="nav-item nav-link" href="#">Part 6</a>
+        -->
+          <!--<a class="nav-item nav-link disabled" href="#">Disabled</a>-->
+        </div>
+      </div>
+    </nav>
+    <!--<h1 class="h2Center">CNIT 133 Homework 3 - Functions</h1>-->
+
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Part 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Part 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Part 3</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Part 4</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Part 5</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Part 6</a>
+      </li>
+
+    </ul>
+
+    <div class="content">
+      <div class="contentCenter">
+        <h2>Part 1 - Student Grades</h2>
+        <h4>Calculate final average score</h4>
+        <p>Enter each value as total points scored, not percentages.</p>
+        <div id="result">
+          Student must retake class
+        </div>
+        <div class="formContent">
+          <form class="container" id="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom01">Homework Average</label>
+                <input type="text" class="form-control" id="average" placeholder="92" required>
+                <div class="invalid-feedback">
+                  Please enter a homework average score.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom02">Mid-Term</label>
+                <input type="text" class="form-control" id="midterm" placeholder="94" required>
+                <div class="invalid-feedback">
+                  Please enter a mid-term score.
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom03">Final Exam</label>
+                <input type="text" class="form-control" id="final" placeholder="91" required>
+                <div class="invalid-feedback">
+                  Please enter a final exam score.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom04">ACR</label>
+                <input type="text" class="form-control" id="acr" placeholder="91" required>
+                <div class="invalid-feedback">
+                  Please enter your ACR score.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom05">ACR</label>
+                <input type="text" class="form-control" id="resultInput" placeholder="91" required>
+                <div class="invalid-feedback">
+                  Please enter your ACR score.
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </form>
+
+        </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // hide the result box inititally
+        $('#result').toggle();
+
+        $('form').on('submit', function(event) {
+
+
+          if(validateForm(event) == false)
+            return;
+
+          var avg = calculateAverage();
+
+          if(avg <=60) {
+            if($( "#result" ).is( ":hidden" )) {
+              $('#result').show();
+            }
+          } else {
+            $('#result').hide();
+          }
+
+          event.preventDefault();
+        });
+      });
+
+      function calculateAverage() {
+        return (.5*$('#average').val()) + (.2*$('#midterm').val()) +
+        (.2*$('#final').val()) + (.1*$('#acr').val());
+      }
+
+      function validateForm(e) {
+        var validated = 0; // four elements need to be validated
+
+        $('form input[type=text]').each(function(index) {
+          alert($(this).attr('id'));
+
+          var validity = isValidInt($(this).val());
+
+          // ininvalid input
+          if($(this).val().length == 0 || $(this).val() === "" || validity == false) {
+            e.preventDefault();
+            if($(this).hasClass('is-invalid')) {
+              e.preventDefault();
+            } else {
+              $(this).addClass('is-invalid');
+            }
+
+            if($(this).next().hasClass('invalid-feedback')) {
+              $(this).next().css('display', 'block');
+            }
+          } else { // input is good
+            if($(this).hasClass('is-invalid')) {
+              $(this).removeClass('is-invalid');
+              $(this).addClass('is-valid');
+            }
+
+            if(!$(this).hasClass('is-valid')) {
+              $(this).addClass('is-valid');
+            }
+
+            if($(this).next().hasClass('invalid-feedback')) {
+              $(this).next().css('display', 'none');
+            }
+
+            validated++;
+          }
+        });
+
+        if(validated == 4)
+          return new Boolean(true);
+        else
+          return new Boolean(false);
+
+      }
+
+      function isValidInt(value) {
+        if(isNaN(value) || (value < 0 || value >100)) {
+          //alert('invalid');
+          return new Boolean(false);
+        }
+
+        return new Boolean(true);
+      }
+    </script>
+  </body>
+</html>

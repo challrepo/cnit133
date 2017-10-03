@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <title>HW2 | CNIT 133</title>
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="css/hw2-pt3.css">
+ <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat:900" rel="stylesheet">
+</head>
+<body>
+	<h1 class="page-title">CNIT 133 Homework</h1>
+
+<nav>
+  <p>
+    <a href="index.html">HW 1</a>
+    <span class="inactive">HW 2</span>
+    <a href="HW3.html">H2 3</a>
+    <a href="HW4.html">HW 4</a>
+    <a href="HW5.html">HW 5</a>
+    <a href="HW6.html">HW 6</a>
+    <a href="HW7.html">HW 7</a>
+    <a href="HW8.html">HW 8</a>
+  </p>
+</nav>
+
+<h2 class="caption">Homework #2 - Part IV <br>
+   Squares and cubes</h2>
+
+
+<br>
+
+
+  <div class="table1">
+
+  </div>
+
+  <button type="button" name="button" id="cnt1_10">Show Table 1-10</button>
+  <div id="table2">
+
+  </div>
+<br>
+<a href="javascript: history.go(-1);" id='back'>Go Back</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    table = "<table border=1>";
+    table += buildTable(1,6);
+    table += "</table>";
+
+    $('.table1').html(table);
+
+    $('#cnt1_10').on('click', function() {
+      table = "<table border=1>";
+      table += buildTable(7,10);
+      table += "</table>";
+
+      //$('.table2').html(table);
+      document.getElementById('table2').innerHTML = table;
+    });
+  });
+
+  function buildTable(start, end) {
+    var out = "<tr>";
+    out += "<td>Number</td><td>Square</td><td>Cube</td>";
+    out += "<tr>";
+
+    for(var i=start;i<=end;i++) {
+      out += "<td align='right'>" + i + "</td>";
+      out += "<td align='right'>" + (i**2) + "</td>";
+      out += "<td align='right'>" + (i**3) + "</td>";
+      out += "</tr>"
+    }
+
+    return out;
+  }
+</script>
+
+<div class="last-modified-container">
+  <p id="last-modified">Document last modified: </p>
+  <script type="text/javascript">
+    lastModifiedP = document.getElementById('last-modified');
+    lastModifiedP.innerHTML += " " + document.lastModified;
+  </script>
+</div>
+
+</body>
+</html>

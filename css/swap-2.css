@@ -1,0 +1,19 @@
+body, html {
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  color: green;
+}
+
+p {
+  color: blue;
+}
+
+.swapper {
+  zIndex: 10000;
+  position: absolute;
+  border: thin solid red;
+  top: 0;
+  left: calc(100% - 175px);
+}

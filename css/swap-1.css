@@ -1,0 +1,25 @@
+bpdy, html {
+  background-color: #eff;
+}
+
+h1  {
+  color: red;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+p {
+  color: silver;
+  margin: 0;
+  padding: 0;
+}
+
+.swapper {
+  zIndex: 10000;
+  position: absolute;
+  border: thin solid red;
+  top: 0;
+  left: calc(100% - 175px);
+}
