@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">CNIT133 Homework 3 - Functions</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <!--
+          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#">Part 1</a>
+          <a class="nav-item nav-link" href="#">Part 2</a>
+          <a class="nav-item nav-link" href="#">Part 3</a>
+          <a class="nav-item nav-link" href="#">Part 4</a>
+          <a class="nav-item nav-link" href="#">Part 5</a>
+          <a class="nav-item nav-link" href="#">Part 6</a>
+        -->
+          <!--<a class="nav-item nav-link disabled" href="#">Disabled</a>-->
+        </div>
+      </div>
+    </nav>
+    <!--<h1 class="h2Center">CNIT 133 Homework 3 - Functions</h1>-->
+
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Part 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Part 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Part 3</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Part 4</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Part 5</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Part 6</a>
+      </li>
+
+    </ul>
+
+    <div class="content">
+      <div class="contentCenter">
+        <h2>Part 2 - Sales Rep Weekly Earnings</h2>
+
+        <div class="formContent">
+          <form class="container" id="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-12">
+                <h4 for="salesperson">Salesperson:</h4>
+                <input type="text" class="form-control" name="salesperson" value=""  data-toggle="tooltip" data-placement="right" title="Please make sure that the salesperson's name is spelled correctly">
+              </div>
+            </div>
+            <br>
+            <h4>Items Sold:</h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="text" class="form-control" name="item-1" value="0" placeholder="0"></td>
+                  <td><input type="text" class="form-control" name="item-2" value="0" placeholder="0"></td>
+                  <td><input type="text" class="form-control" name="item-3" value="0" placeholder="0"></td>
+                  <td><input type="text" class="form-control" name="item-4" value="0" placeholder="0"></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td colspan="4">
+                    <button type="button" class="btn btn-primary" name="button" id="calculate">Calculate</button>
+                    <button type="button" class="btn btn-primary" name="button">Reset</button></td>
+                </tr>
+
+              </tbody>
+            </table>
+
+            <hr>
+            <h4>Result:</h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Price</th>
+                  <th># Sold</th>
+                  <th>Total</th>
+                  <th>Comission</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><input type="text" name="price-1" class="form-control" value="239.99" readonly></td>
+                  <td><input type="text" name="item-sold-1" id="item-sold-1" class="form-control" value=""></td>
+                  <td><input type="text" name="total-1" class="form-control" value=""></td>
+                  <td><input type="text" name="commission-1" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td><input type="text" name="price-2" class="form-control" value="129.75" readonly></td>
+                  <td><input type="text" name="item-sold-2" class="form-control" value=""></td>
+                  <td><input type="text" name="total-2" class="form-control" value=""></td>
+                  <td><input type="text" name="commission-2" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td><input type="text" name="price-3" class="form-control" value="99.95" readonly></td>
+                  <td><input type="text" name="item-sold-3" class="form-control" value=""></td>
+                  <td><input type="text" name="total-3" class="form-control" value=""></td>
+                  <td><input type="text" name="commission-3" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td><input type="text" name="price-4" class="form-control" value="350.89" readonly></td>
+                  <td><input type="text" name="item-sold-4" class="form-control" value=""></td>
+                  <td><input type="text" name="total-4" class="form-control" value=""></td>
+                  <td><input type="text" name="commission-4" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                  <td colspan="3">Total Amount Sold:</td>
+                  <td colspan="2"><input type="text" name="amount-total" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                  <td colspan="3">Total Earnings:</td>
+                  <td colspan="2"><input type="text" name="earnings-total" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                  <td colspan="3">Total Commission:</td>
+                  <td colspan="2"><input type="text" name="commission-total" class="form-control" value=""></td>
+                </tr>
+              </tbody>
+            </table>
+
+        </form>
+<!--
+        <div class="row">
+          <div class="col-md-12 mb-12">
+            <button type="button" class="btn btn-primary" name="button">Calculate</button>
+            <button type="button" class="btn btn-primary" name="button">Reset</button>
+
+          </div>
+        </div>
+
+-->
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // enable the tooltip
+        $("[data-toggle=tooltip").tooltip();
+
+
+
+        $('#calculate').on('click', function() {
+          var ttlAmountSold = ttlCommission = 0;
+          var ttlEarnings   = 200;
+
+          for(var i=1;i<=4;i++) {
+            var price = $('input[name=price-' + i + ']').val();
+            var qty   = $('input[name=item-' + i + ']').val();
+
+            var total     = computeItemTotal(price, qty);
+            var commision = computeCommission(total);
+
+            ttlAmountSold += parseFloat(total);
+            ttlCommission += parseFloat(commision);
+            ttlEarnings += parseFloat(commision);
+
+            $('input[name=item-sold-' + i + ']').val(qty);
+            $('input[name=total-' + i + ']').val(parseFloat(total).toFixed(2));
+            $('input[name=commission-' + i + ']').val(parseFloat(commision).toFixed(2));
+          }
+
+          $('input[name=earnings-total]').val(parseFloat(ttlEarnings).toFixed(2));
+          $('input[name=amount-total]').val(parseFloat(ttlAmountSold).toFixed(2));
+          $('input[name=commission-total]').val(parseFloat(ttlCommission).toFixed(2));
+        });
+
+      }); // end jQuery document.ready()
+
+      function computeCommission(price) {
+        return (0.09*price).toFixed(2);
+      }
+
+      function computeItemTotal(amt, qty) {
+        //alert(amt + " " + qty);
+        return (amt*qty).toFixed(2);
+      }
+    </script>
+  </body>
+</html>

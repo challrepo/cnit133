@@ -58,7 +58,8 @@
       <div class="contentCenter">
         <h2>Part 1 - Student Grades</h2>
         <h4>Calculate final average score</h4>
-        <p>Enter each value as total points scored, not percentages.</p>
+        <button type="button" class="btn btn-info" name="button" id='helpbutton'>Click To Show/Hide Instructions</button>
+        <p id='help'>The following webpage contains the heading, Student Grades, and uses a script that inputs a student's homework average, mid-term exam score, final exam score, and ACR (all as integers).</p>
         <div id="result">
           Student must retake class
         </div>
@@ -95,15 +96,18 @@
                   Please enter your ACR score.
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="validationCustom05">ACR</label>
-                <input type="text" class="form-control" id="resultInput" placeholder="91" required>
-                <div class="invalid-feedback">
-                  Please enter your ACR score.
-                </div>
+              <div class="col-md-6 mb-6">
+                <label for="validationCustom05">Average Score</label>
+                <input type="text" class="form-control" id="resultInput" placeholder="">
               </div>
+              <div class="col-md-6 mb-6">
+                <label for="validationCustom05">Average Grade</label>
+                <input type="text" class="form-control" id="resultGrade" placeholder="">
             </div>
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <div class="col-md-12 mb-12">
+              <br>
+              <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
           </form>
 
         </form>
@@ -121,37 +125,63 @@
       $(document).ready(function() {
         // hide the result box inititally
         $('#result').toggle();
+        $('#help').toggle().addClass('bg-info text-white');
+
+        $('#helpbutton').on('click', function() {
+          $('#help').toggle();
+        });
 
         $('form').on('submit', function(event) {
-
 
           if(validateForm(event) == false)
             return;
 
-          var avg = calculateAverage();
+          var avg   = calculateAverage();
+          var grade = calculateGrade(avg);
 
-          if(avg <=60) {
+          if(avg <=69) {
             if($( "#result" ).is( ":hidden" )) {
-              $('#result').show();
+              $('#result').toggle();
             }
           } else {
-            $('#result').hide();
+            $('#result').toggle();
           }
+
+          $('#resultInput').val(avg).addClass('border-success bg-success text-white');
+          $('#resultGrade').val(grade).addClass('border-success bg-success text-white');
 
           event.preventDefault();
         });
-      });
+      }); // end jQuery document.ready()
+
+      function calculateGrade(avg) {
+          // needs error checking
+          if(avg >= 90)
+            return 'A';
+          if(avg >= 80 && avg <= 89)
+            return 'B';
+          if(avg >= 70 && avg <= 79)
+            return 'C';
+          if(avg >= 60 && avg <= 69)
+            return 'D';
+          if(avg <= 59)
+            return 'F';
+
+      }
 
       function calculateAverage() {
-        return (.5*$('#average').val()) + (.2*$('#midterm').val()) +
-        (.2*$('#final').val()) + (.1*$('#acr').val());
+        return Math.round((.5*$('#average').val()) + (.2*$('#midterm').val()) +
+        (.2*$('#final').val()) + (.1*$('#acr').val()));
       }
 
       function validateForm(e) {
         var validated = 0; // four elements need to be validated
 
         $('form input[type=text]').each(function(index) {
-          alert($(this).attr('id'));
+          if($(this).attr('id') == 'resultInput')
+            return;
+          if($(this).attr('id') == 'resultGrade')
+            return;
 
           var validity = isValidInt($(this).val());
 
